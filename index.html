@@ -1,313 +1,145 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automação Inteligente</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatiza - Soluções em IA</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    /* Cabeçalho */
+    #cabeçalho {
+      position: relative;
+    }
 
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    #cabeçalho img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    #cabeçalho div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      width: 100%;
+      padding: 0 20px;
+    }
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-        .navbar {
-            background-color: #000; /* Barra de menu preta */
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        .navbar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: flex-end; /* Menu no canto superior direito */
-        }
-        .navbar ul li {
-            margin: 0 15px;
-        }
-        .navbar ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif; /* Fonte sofisticada */
-        }
-        .navbar ul li a:hover {
-            text-decoration: underline;
-        }
-        header {
-            position: relative;
-            color: white;
-            text-align: center;
-        }
-        .header-image {
-            width: 100%;
-            height: 350px; /* Imagem no topo com altura de 350px */
-            object-fit: cover;
-        }
-        .header-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        section {
-            padding: 80px 20px;
-        }
-        .bg-gray { background-color: #f9f9f9; }
-        .bg-blue { background: linear-gradient(135deg, #007bff, #0056b3); color: white; }
-        .bg-green { background: linear-gradient(135deg, #28a745, #1e7d34); color: white; }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            margin-top: 20px;
-            background-color: #ff7f00;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background-color: #e66a00;
-        }
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            background-color: #28a745;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .contact-form button:hover {
-            background-color: #218838;
-        }
-        h2 {
-            font-family: 'Montserrat', sans-serif; /* Fonte sofisticada para títulos */
-            font-weight: 700;
-        }
-        .benefits-section {
-            padding: 50px 20px;
-            background-color: #28a745; /* Fundo verde */
-            color: white;
-        }
-        footer {
-            background-color: #000;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-        footer a {
-            color: #ff7f00;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        .card {
-            margin-top: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card-body {
-            text-align: center;
-        }
-        .card-title {
-            font-weight: 700;
-            font-size: 24px;
-        }
-        .card-text {
-            font-size: 18px;
-        }
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 100%;
-            padding: 5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            font-size: 24px;
-            z-index: 1000;
-        }
-        .whatsapp-btn:hover {
-            background-color: #128c7e;
-        }
-    </style>
+    #cabeçalho h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    #cabeçalho p {
+      font-size: 1.5rem;
+    }
+
+    /* Responsividade para telas pequenas */
+    @media (max-width: 768px) {
+      #cabeçalho img {
+        height: 250px; /* Ajusta a altura para telas menores */
+      }
+
+      #cabeçalho div {
+        top: 40%; /* Ajusta o posicionamento do texto */
+      }
+
+      #cabeçalho h1 {
+        font-size: 2rem; /* Ajusta o tamanho do título */
+      }
+
+      #cabeçalho p {
+        font-size: 1.2rem; /* Ajusta o parágrafo */
+      }
+    }
+
+    /* Responsividade para telas extra pequenas */
+    @media (max-width: 480px) {
+      #cabeçalho img {
+        height: 200px; /* Ajuste para telas muito pequenas */
+      }
+
+      #cabeçalho div {
+        top: 30%; /* Ajuste do posicionamento do texto */
+      }
+
+      #cabeçalho h1 {
+        font-size: 1.8rem; /* Ajuste no título */
+      }
+
+      #cabeçalho p {
+        font-size: 1rem; /* Ajuste no parágrafo */
+      }
+    }
+
+    /* Seção Sobre */
+    #sobre {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+
+    #sobre h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    #sobre p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: justify;
+      color: #333;
+    }
+
+    /* Estilo para o rodapé */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+  <!-- Cabeçalho -->
+  <section id="cabeçalho">
+    <img src="caminho-da-imagem-do-cabecalho.jpg" alt="Cabeçalho">
+    <div>
+      <h1>Bem-vindo à AUTOMATIZA</h1>
+      <p>Soluções Inteligentes com Agentes de IA Sob Medida</p>
+    </div>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre">
     <div class="container">
-        <a class="navbar-brand" href="#">Automação Inteligente</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto"> <!-- Menu alinhado à direita -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#servicos">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#agentes-ia">Agentes de IA</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://wa.me/65992668330" target="_blank" class="whatsapp-btn">Contato</a>
-                </li>
-            </ul>
-        </div>
+      <h2>Sobre Nós</h2>
+      <p>
+        Na <strong>AUTOMATIZA</strong>, somos especialistas em soluções de inteligência artificial criadas sob medida para atender às necessidades específicas de cada negócio. Combinamos tecnologia de ponta e uma abordagem personalizada para oferecer agentes de IA que otimizam processos, aumentam a produtividade e trazem inovação para empresas de todos os tamanhos.
+      </p>
+      <p>
+        Nossa missão é transformar a maneira como as empresas interagem com seus clientes e gerenciam suas operações internas, oferecendo soluções inteligentes que fazem a diferença no dia a dia corporativo. Estamos comprometidos em entregar resultados concretos, com foco na eficiência e no sucesso a longo prazo de nossos parceiros.
+      </p>
+      <p>
+        Com uma equipe dedicada de profissionais altamente capacitados e apaixonados por inovação, a <strong>AUTOMATIZA</strong> se destaca no mercado por sua qualidade, compromisso e constante evolução. Junte-se a nós e descubra como a automação inteligente pode levar o seu negócio ao próximo nível.
+      </p>
     </div>
-</nav>
- 
+  </section>
 
-    <!-- Cabeçalho "#contato">Contato</a></li>   a href= -->
-    <header>
-   <section id="cabeçalho">
-  <img src="img/cab.png" alt="Cabeçalho" style="width: 100%; height: 350px; object-fit: cover;">
-  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
-    <h1 style="font-size: 3rem; font-weight: bold;">Bem-vindo à AUTOMATIZA</h1>
-    <p style="font-size: 1.5rem;">Soluções Inteligentes com Agentes de IA Sob Medida</p>
-  </div>
-</section>
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Automatiza | Todos os direitos reservados.</p>
+  </footer>
 
-    </header>
-
-    <!-- Seções com Bootstrap -->
-    <section id="servicos" class="bg-gray text-center py-5">
- 
-<div class="container" style="margin-top: 40px;">
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Nossos Serviços</h5>
-          <p class="card-text">Criamos agentes de IA sob medida para atender às necessidades do seu negócio.</p>
-        </div>
-        <img src="img/agente-ia.jpg" class="card-img-bottom" alt="Imagem ilustrativa dos serviços" style="width: 100%; height: 300px; object-fit: cover;">
-      </div>
-    </div>
-  </div>
-</div>
-    </section>
-
-    <section id="agentes-ia" class="bg-gray text-center py-5">
- 
-<div class="container" style="margin-top: 40px;">
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Agentes IA</h5>
-          <p class="card-text">Os agentes de inteligência artificial são sistemas automatizados capazes de realizar tarefas complexas, tomar decisões e interagir com usuários de maneira inteligente.</p>
-        </div>
-
-        <img src="img/agente2.jpg" class="card-img-bottom" alt="Imagem ilustrativa dos serviços" style="width: 100%; height: 300px; object-fit: cover;">
-      </div>
-    </div>
-  </div>
-</div>
-    </section>
-
-    <!-- Card com valor da automação -->
-    <section class="text-center py-5">
-        <div class="container">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Valor Médio da Automação</h5>
-                    <p class="card-text">O valor médio para a implementação de um agente de IA é proporcional a complexidade da solução, temos soluções a partir de R$ 200,00. Entre em contato conosco para uma proposta personalizada.</p>
-                   <a href="https://wa.me/65992668330" class="btn">Solicite uma Proposta</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Seção de Vantagens e Benefícios (Fundo Verde) -->
-    <section id="beneficios" class="benefits-section">
-        <div class="container text-center">
-            <h2>Vantagens e Benefícios de Implantar Agentes de IA</h2>
-            <p>Implantar agentes de inteligência artificial em sua empresa pode trazer uma série de benefícios:</p>
-            <ul class="list-unstyled">
-                <li><strong>Aumento da produtividade:</strong> Automação de tarefas repetitivas e processos demorados.</li>
-                <li><strong>Redução de custos:</strong> Menos dependência de mão de obra para tarefas simples e repetitivas.</li>
-                <li><strong>Melhoria na tomada de decisões:</strong> Análises rápidas e precisas para decisões mais informadas.</li>
-                <li><strong>Atendimento ao cliente 24/7:</strong> Agentes de IA podem interagir com os clientes a qualquer momento.</li>
-                <li><strong>Escalabilidade:</strong> Aumente a capacidade de operação sem aumentar os custos operacionais.</li>
-            </ul>
-        </div>
-    </section>
-
-
-<section id="sobre" style="padding: 60px 0; background-color: #f8f9fa;">
-  <div class="container">
-    <h2 class="text-center" style="font-size: 2.5rem; font-weight: bold; margin-bottom: 30px;">Sobre Nós</h2>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify; color: #333;">
-      Na <strong>AUTOMATIZA</strong>, somos especialistas em soluções de inteligência artificial criadas sob medida para atender às necessidades específicas de cada negócio. Combinamos tecnologia de ponta e uma abordagem personalizada para oferecer agentes de IA que otimizam processos, aumentam a produtividade e trazem inovação para empresas de todos os tamanhos.
-    </p>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify; color: #333;">
-      Nossa missão é transformar a maneira como as empresas interagem com seus clientes e gerenciam suas operações internas, oferecendo soluções inteligentes que fazem a diferença no dia a dia corporativo. Estamos comprometidos em entregar resultados concretos, com foco na eficiência e no sucesso a longo prazo de nossos parceiros.
-    </p>
-    <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify; color: #333;">
-      Com uma equipe dedicada de profissionais altamente capacitados e apaixonados por inovação, a <strong>AUTOMATIZA</strong> se destaca no mercado por sua qualidade, compromisso e constante evolução. Junte-se a nós e descubra como a automação inteligente pode levar o seu negócio ao próximo nível.
-    </p>
-  </div>
-</section>
-
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2025 Automação Inteligente. Todos os direitos reservados.</p>
-        <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
-    </footer>
-
-    <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/5521999999999" target="_blank" class="whatsapp-btn">
-        <i class="fab fa-whatsapp"></i>
-  <img src="img/whatsapp.png" alt="WhatsApp" style="width: 50px; height: 50px;">
-</a>
-
-
-    </a>
-
-    <!-- Bootstrap JS e dependências -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
