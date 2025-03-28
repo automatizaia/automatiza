@@ -172,26 +172,39 @@
 </head>
 <body>
 
-    <!-- Barra de navegação com Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Automação Inteligente</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto"> <!-- Menu alinhado à direita -->
-                <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-           
-                <li class="nav-item"><a class="nav-link" href="#agentes-ia">Agentes de IA</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://wa.me/65992668330" target="_blank" class="whatsapp-btn">Contato</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicos">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#agentes-ia">Agentes de IA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://wa.me/65992668330" target="_blank" class="whatsapp-btn">Contato</a>
+                </li>
             </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+ 
 
     <!-- Cabeçalho "#contato">Contato</a></li>   a href= -->
     <header>
-        <img src="img/cab.png" alt="Imagem ilustrativa de tecnologia IA" class="header-image">
-        <div class="header-content">
-            <h1>Automação Inteligente para Empresas</h1>
-            <p>Desenvolvemos agentes de IA personalizados para otimizar seus processos.</p>
-            <a href="#beneficios" class="btn">Saiba Mais</a>
-        </div>
+   <section id="cabeçalho">
+  <img src="img/cab.png" alt="Cabeçalho" style="width: 100%; height: 350px; object-fit: cover;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+    <h1 style="font-size: 3rem; font-weight: bold;">Bem-vindo à AUTOMATIZA</h1>
+    <p style="font-size: 1.5rem;">Soluções Inteligentes com Agentes de IA Sob Medida</p>
+  </div>
+</section>
+
     </header>
 
     <!-- Seções com Bootstrap -->
@@ -210,11 +223,7 @@
     </div>
   </div>
 </div>
-
     </section>
-
-
-
 
     <section id="agentes-ia" class="bg-gray text-center py-5">
  
@@ -232,15 +241,7 @@
     </div>
   </div>
 </div>
-
     </section>
-
-
-
-
-
-
-
 
     <!-- Card com valor da automação -->
     <section class="text-center py-5">
@@ -250,8 +251,6 @@
                     <h5 class="card-title">Valor Médio da Automação</h5>
                     <p class="card-text">O valor médio para a implementação de um agente de IA é proporcional a complexidade da solução, temos soluções a partir de R$ 200,00. Entre em contato conosco para uma proposta personalizada.</p>
                    <a href="https://wa.me/65992668330" class="btn">Solicite uma Proposta</a>
-
-
                 </div>
             </div>
         </div>
@@ -289,6 +288,7 @@
     </p>
   </div>
 </section>
+
 
     <!-- Rodapé -->
     <footer>
