@@ -21,32 +21,34 @@
             scroll-behavior: smooth;
         }
         .navbar {
-            background-color: #000; /* Barra de menu preta */
-            padding: 10px 0;
+            background-color: #000;
+            padding: 15px 0;
             position: fixed;
             top: 0;
             right: 0;
             left: 0;
             z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .navbar ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: flex-end; /* Menu no canto superior direito */
+            justify-content: flex-end;
         }
         .navbar ul li {
-            margin: 0 10px;
+            margin: 0 15px;
         }
         .navbar ul li a {
             color: white;
             text-decoration: none;
             font-weight: 600;
             font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s;
         }
         .navbar ul li a:hover {
-            text-decoration: underline;
+            color: #ff7f00;
         }
         header {
             position: relative;
@@ -55,17 +57,18 @@
         }
         .header-image {
             width: 100%;
-            height: 350px; /* Imagem no topo com altura de 350px */
+            height: 400px;
             object-fit: cover;
+            filter: brightness(0.6);
         }
         .header-content {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 15px;
         }
         section {
             padding: 60px 20px;
@@ -73,7 +76,7 @@
         .bg-gray { background-color: #f9f9f9; }
         .bg-blue { background: linear-gradient(135deg, #007bff, #0056b3); color: white; }
         .bg-green { background: linear-gradient(135deg, #28a745, #1e7d34); color: white; }
-        .btn {
+        .btn-custom {
             display: inline-block;
             padding: 12px 24px;
             margin-top: 20px;
@@ -84,7 +87,7 @@
             font-weight: 600;
             transition: 0.3s;
         }
-        .btn:hover {
+        .btn-custom:hover {
             background-color: #e66a00;
         }
         .contact-form {
@@ -119,11 +122,6 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
         }
-        .benefits-section {
-            padding: 50px 20px;
-            background-color: #28a745; /* Fundo verde */
-            color: white;
-        }
         footer {
             background-color: #000;
             color: white;
@@ -138,21 +136,6 @@
         footer a:hover {
             text-decoration: underline;
         }
-        .card {
-            margin-top: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card-body {
-            text-align: center;
-        }
-        .card-title {
-            font-weight: 700;
-            font-size: 24px;
-        }
-        .card-text {
-            font-size: 18px;
-        }
         .whatsapp-btn {
             position: fixed;
             bottom: 20px;
@@ -160,7 +143,7 @@
             background-color: #25d366;
             color: white;
             border-radius: 100%;
-            padding: 5px;
+            padding: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             font-size: 24px;
             z-index: 1000;
@@ -175,13 +158,17 @@
                 align-items: center;
             }
             .navbar ul li {
-                margin: 5px 0;
+                margin: 10px 0;
             }
             section {
                 padding: 40px 15px;
             }
             .header-image {
                 height: 250px;
+            }
+            .btn-custom {
+                padding: 10px 20px;
+                font-size: 14px;
             }
         }
     </style>
@@ -222,16 +209,36 @@
 </header>
 
 <!-- Seção de Serviços -->
-<section id="servicos" class="bg-gray text-center py-5">
-    <div class="container">
+<section id="servicos" class="bg-gray py-5">
+    <div class="container text-center">
+        <h2>Nosso Serviço de Automação Inteligente</h2>
+        <p class="lead">Criamos agentes de IA sob medida para atender às necessidades do seu negócio, melhorando a produtividade e a eficiência.</p>
         <div class="row">
-            <div class="col-12">
-                <div class="card">
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/agente-ia.jpg" class="card-img-top" alt="Serviço 1">
                     <div class="card-body">
-                        <h5 class="card-title">Nossos Serviços</h5>
-                        <p class="card-text">Criamos agentes de IA sob medida para atender às necessidades do seu negócio.</p>
+                        <h5 class="card-title">Consultoria em Automação</h5>
+                        <p class="card-text">Oferecemos consultoria especializada para implementar soluções de IA que atendam às suas necessidades específicas.</p>
                     </div>
-                    <img src="img/agente-ia.jpg" class="card-img-bottom" alt="Imagem ilustrativa dos serviços">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/agente-ia.jpg" class="card-img-top" alt="Serviço 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Desenvolvimento de Agentes</h5>
+                        <p class="card-text">Desenvolvemos agentes de IA personalizados para automatizar suas operações e aumentar a eficiência.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/agente-ia.jpg" class="card-img-top" alt="Serviço 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Suporte e Manutenção</h5>
+                        <p class="card-text">Oferecemos suporte contínuo para garantir que seus agentes de IA funcionem sempre com excelência.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -239,57 +246,20 @@
 </section>
 
 <!-- Seção de Agentes de IA -->
-<section id="agentes-ia" class="bg-gray text-center py-5">
+<section id="agentes-ia" class="bg-blue py-5 text-center text-white">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Agentes de IA</h5>
-                        <p class="card-text">Os agentes de inteligência artificial são sistemas automatizados capazes de realizar tarefas complexas, tomar decisões e interagir com usuários de maneira inteligente.</p>
-                    </div>
-                    <img src="img/agente2.jpg" class="card-img-bottom" alt="Imagem ilustrativa dos serviços">
-                </div>
-            </div>
-        </div>
+        <h2>Agentes de Inteligência Artificial</h2>
+        <p class="lead">Entenda como os agentes de IA podem transformar o seu negócio, realizando tarefas complexas com rapidez e eficiência.</p>
+        <a href="https://wa.me/65992668330" class="btn-custom">Fale com um Especialista</a>
     </div>
 </section>
 
 <!-- Card com valor da automação -->
-<section class="text-center py-5">
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Valor Médio da Automação</h5>
-                <p class="card-text">O valor médio para a implementação de um agente de IA é proporcional à complexidade da solução, com soluções a partir de R$ 200,00. Entre em contato para uma proposta personalizada.</p>
-                <a href="https://wa.me/65992668330" class="btn">Solicite uma Proposta</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Seção de Benefícios -->
-<section id="beneficios" class="benefits-section">
+<section class="py-5">
     <div class="container text-center">
-        <h2>Vantagens e Benefícios de Implantar Agentes de IA</h2>
-        <p>Implantar agentes de inteligência artificial em sua empresa pode trazer uma série de benefícios:</p>
-        <ul class="list-unstyled">
-            <li><strong>Aumento da produtividade:</strong> Automação de tarefas repetitivas e processos demorados.</li>
-            <li><strong>Redução de custos:</strong> Menos dependência de mão de obra para tarefas simples e repetitivas.</li>
-            <li><strong>Melhoria na tomada de decisões:</strong> Análises rápidas e precisas para decisões mais informadas.</li>
-            <li><strong>Atendimento ao cliente 24/7:</strong> Agentes de IA podem interagir com os clientes a qualquer momento.</li>
-            <li><strong>Escalabilidade:</strong> Aumente a capacidade de operação sem aumentar os custos operacionais.</li>
-        </ul>
-    </div>
-</section>
-
-<!-- Seção Sobre Nós -->
-<section id="sobre" style="background-color: #f8f9fa;">
-    <div class="container">
-        <h2 class="text-center" style="font-size: 2.5rem; font-weight: bold;">Sobre Nós</h2>
-        <p style="font-size: 1.2rem; line-height: 1.6; text-align: justify; color: #333;">
-            Na <strong>AUTOMATIZA</strong>, somos especialistas em soluções de inteligência artificial criadas sob medida para atender às necessidades específicas de cada negócio...
-        </p>
+        <h2>Valor Médio da Automação</h2>
+        <p class="lead">O valor médio para a implementação de um agente de IA é proporcional à complexidade da solução. Solicite uma proposta personalizada.</p>
+        <a href="https://wa.me/65992668330" class="btn-custom">Solicite uma Proposta</a>
     </div>
 </section>
 
